@@ -39,7 +39,15 @@ function Home() {
         "name": "What is Epicon?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Epicon is a lightweight, from-scratch machine learning library built on NumPy. It provides a unified fit/predict API for both neural networks and traditional ML models with minimal dependencies and optional Numba acceleration."
+          "text": "Epicon is a lightweight, from-scratch machine learning library for Python built entirely on NumPy. It provides a unified fit/predict API for both neural networks and traditional ML models with minimal dependencies. Epicon has no dependency on TensorFlow, PyTorch, or CUDA. It supports linear models (LinearRegression, Ridge, Lasso, LogisticRegression), tree-based models (DecisionTree, RandomForest), nearest neighbors (KNN), Gaussian Naive Bayes, and neural networks via a Keras-style Sequential API with Dense, Dropout, and Conv1D layers. It also includes built-in preprocessing (scalers, encoders), datasets (Iris, MNIST), evaluation metrics, and model persistence. Created by developer kebtes and released under the MIT license."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Epicon used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Epicon is used for machine learning tasks including classification, regression, clustering, and neural network training. It is designed for developers and data scientists who want a lightweight, understandable ML library without the complexity of TensorFlow or PyTorch."
         }
       },
       {
@@ -47,7 +55,7 @@ function Home() {
         "name": "How do I install Epicon?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Install Epicon with pip: pip install epicon. NumPy is the only required dependency. Optionally install Numba for JIT acceleration."
+          "text": "Install Epicon with pip: pip install epicon. NumPy is the only required dependency. Optionally install Numba for JIT acceleration of tree splitting and distance computations."
         }
       },
       {
@@ -63,7 +71,23 @@ function Home() {
         "name": "What models does Epicon support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Epicon supports linear models (LinearRegression, Ridge, Lasso, LogisticRegression), tree-based models (DecisionTree, RandomForest), nearest neighbors (KNN), Gaussian Naive Bayes, and neural networks with a Sequential API (Dense, Dropout, Conv1D layers)."
+          "text": "Epicon supports linear models (LinearRegression, Ridge, Lasso, LogisticRegression), tree-based models (DecisionTreeClassifier, DecisionTreeRegressor, RandomForestClassifier, RandomForestRegressor), nearest neighbors (KNeighborsClassifier, KNeighborsRegressor), Gaussian Naive Bayes (GaussianNB), and neural networks with a Sequential API (Dense, Dropout, Conv1D layers, ReLU/Sigmoid/Softmax/Tanh activations, Adam/Momentum/SGD optimizers)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who created Epicon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Epicon was created by the developer kebtes and is hosted on GitHub at github.com/kebtes/epicon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Epicon free and open source?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Epicon is released under the MIT License and is completely free and open source."
         }
       }
     ]
@@ -73,7 +97,7 @@ function Home() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Epicon",
-    "description": "Lightweight, from-scratch machine learning library for Python. Unified API for neural networks and traditional ML with minimal dependencies.",
+    "description": "Epicon is a lightweight, pure Python machine learning library built from scratch on NumPy. Provides a unified API for neural networks (Sequential API with Dense, Dropout, Conv1D) and traditional ML models (LinearRegression, RandomForest, KNN, and more). Zero dependencies on TensorFlow, PyTorch, or CUDA. MIT license.",
     "applicationCategory": "Machine Learning",
     "operatingSystem": "Cross-platform",
     "programmingLanguage": "Python",
@@ -89,7 +113,7 @@ function Home() {
     <section className="flex-1 flex flex-col items-center justify-center text-white px-4 pt-20">
       <SEO
         title="Epicon"
-        description="Epicon is a lightweight, from-scratch ML library built on NumPy. Unified API for neural networks and traditional ML. Pure Python, MIT license, zero bloat."
+        description="Epicon is a lightweight, pure Python machine learning library built from scratch on NumPy with zero dependencies on TensorFlow or PyTorch. Provides a unified fit/predict API for neural networks and traditional ML models. Created by kebtes, MIT license."
         canonicalUrl="https://epiconml.github.io/"
         jsonLd={[softwareSchema, faqSchema]}
       />
@@ -106,6 +130,15 @@ function Home() {
       <p className="text-sm md:text-base text-center font-extralight text-white/70 mb-5 tracking-widest uppercase">
         LIGHTWEIGHT MACHINE LEARNING LIBRARY
       </p>
+
+      <section className="max-w-2xl mx-auto mb-10 text-center px-4">
+        <p className="text-white/80 leading-relaxed text-sm md:text-base">
+          Epicon is a lightweight, pure Python machine learning library built from scratch on NumPy.
+          It provides a unified API for both neural networks and traditional ML models — with zero
+          dependencies on TensorFlow, PyTorch, or CUDA. Created by{' '}
+          <a href="https://github.com/kebtes" className="text-white/60 hover:text-white underline underline-offset-2">kebtes</a>.
+        </p>
+      </section>
 
       <div className="mb-5">
         <div

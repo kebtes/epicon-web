@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { Routes, Route } from 'react-router-dom'
 import RootLayout from './components/layout/RootLayout'
 import DocsLayout from './components/layout/DocsLayout'
@@ -15,7 +16,9 @@ import Releases from './components/pages/Releases'
 
 function App() {
   return (
-    <Routes>
+    <>
+      <Analytics />
+      <Routes>
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/docs" element={<DocsLayout />}>
@@ -33,6 +36,7 @@ function App() {
         </Route>
       </Route>
     </Routes>
+    </>
   )
 }
 
