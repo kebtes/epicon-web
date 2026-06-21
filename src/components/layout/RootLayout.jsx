@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../Header'
-import Footer from '../Footer'
 import Grainient from '../Grainient'
 
 export default function RootLayout() {
@@ -16,31 +15,29 @@ export default function RootLayout() {
         warpFrequency={5}
         warpSpeed={2}
         warpAmplitude={50}
-        blendAngle={0}
-        blendSoftness={0.5}
-        rotationAmount={500}
-        noiseScale={2}
+        blendAngle={5}
+        blendSoftness={0.8}
+        rotationAmount={1000}
+        noiseScale={1}
         grainAmount={0.05}
         grainScale={5}
         grainAnimated={false}
         contrast={1.5}
-        gamma={1}
+        gamma={1.5}
         saturation={1}
-        centerX={0}
-        centerY={0}
-        zoom={0.9}
+        centerX={0.5}
+        centerY={0.5}
+        zoom={1}
         className="fixed inset-0 z-0"
       />
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="fixed top-0 left-0 right-0 z-50">
           <Header />
         </div>
-        <main className="flex-1 flex flex-col pt-14 pb-12">
+        <main className="flex-1 flex flex-col pt-14 pb-5">
           <Outlet />
         </main>
-        <div className="fixed bottom-0 left-0 right-0 z-50">
-          <Footer />
-        </div>
+
       </div>
     </div>
   );

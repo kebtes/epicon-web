@@ -60,7 +60,7 @@ export default function DocsLayout() {
     <DocsContext.Provider value={{ toc, setToc }}>
       <div className="flex flex-1 flex-row">
         <DocsSidebar activeSection={activeSection} />
-        <div ref={contentRef} className="flex-1 min-w-0 px-8 md:px-12 py-10 max-w-4xl">
+        <div ref={contentRef} className="docs-content flex-1 min-w-0 px-8 md:px-12 py-10 max-w-4xl">
           <Outlet />
         </div>
       </div>
