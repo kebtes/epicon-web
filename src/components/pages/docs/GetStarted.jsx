@@ -47,7 +47,7 @@ export default function GetStarted() {
           It provides a unified API for neural networks <em>and</em> traditional ML models — all with minimal
           dependencies.
         </p>
-        <div className="bg-white/[0.02] border border-white/10 rounded-xs p-5 max-w-3xl">
+        <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-xs p-5 max-w-3xl">
           <h4 className="text-sm font-semibold text-white/60 mb-3 uppercase tracking-wider">Design Principles</h4>
           <ul className="space-y-2">
             {[
@@ -90,7 +90,7 @@ pip install -e .`} />
         <p className="text-sm text-white/60 mb-3">Install everything including optional dependencies.</p>
         <CodeSnippet code={`pip install -e .[all]`} />
 
-        <div className="mt-6 p-4 border border-white/10 rounded-xs bg-white/[0.02] max-w-3xl">
+        <div className="mt-6 p-4 border border-white/10 rounded-xs bg-white/[0.02] backdrop-blur-xl max-w-3xl">
           <h4 className="text-sm font-semibold text-white/60 mb-2 uppercase tracking-wider">Dependencies</h4>
           <ul className="space-y-1 text-sm text-white/60">
             <li><span className="text-white/80">Required:</span> NumPy &ge; 1.21</li>
@@ -157,7 +157,7 @@ model.fit(X_train, y_train, epochs=5, batch_size=32)`} />
             <Link
               key={step.to}
               to={step.to}
-              className="block p-4 border border-white/10 rounded-xs hover:border-white/30 transition-colors bg-white/[0.02] group"
+              className="block p-4 border border-white/10 rounded-xs hover:border-white/30 transition-colors bg-white/[0.02] backdrop-blur-xl group"
             >
               <h3 className="text-sm font-semibold text-white/80 group-hover:text-white transition-colors mb-1">
                 {step.title} &rarr;
