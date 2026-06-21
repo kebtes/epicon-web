@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 const topLevelExports = [
   'Model', 'Sequential', 'Dense', 'Dropout', 'Conv1D', 'Layer',
@@ -48,6 +49,17 @@ export default function ApiReference() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="API Reference"
+        description="Complete API reference for Epicon: all modules, classes, and functions including models, layers, activations, losses, optimizers, preprocessing, datasets, and metrics."
+        canonicalUrl="https://epiconml.github.io/docs/api"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon API Reference",
+          "description": "Complete index of all Epicon modules, classes, and functions.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">API Reference</h1>
       <p className="text-white/60 mb-10 max-w-3xl">
         Complete index of all public exports in the Epicon library.

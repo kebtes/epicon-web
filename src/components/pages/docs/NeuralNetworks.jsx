@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function NeuralNetworks() {
   const { setToc } = useDocs()
@@ -31,6 +32,17 @@ export default function NeuralNetworks() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Neural Networks"
+        description="Build and train neural networks with Epicon's Sequential API. Dense, Dropout, Conv1D layers with ReLU, Softmax, Adam optimizer, and model persistence."
+        canonicalUrl="https://epiconml.github.io/docs/neural-networks"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Neural Networks",
+          "description": "Complete guide to building and training neural networks with Epicon.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">Neural Networks</h1>
       <p className="text-white/60 mb-10 max-w-3xl">
         Epicon provides two APIs for building neural networks: the flexible <code className="text-white/80 bg-white/5 px-1 rounded-xs text-sm font-mono">Model</code> base class and the Keras-style <code className="text-white/80 bg-white/5 px-1 rounded-xs text-sm font-mono">Sequential</code> API.

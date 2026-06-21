@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useReleases } from '../layout/ReleasesLayout'
+import SEO from '../SEO'
 
 export default function Releases() {
   const { setReleases } = useReleases()
@@ -58,6 +59,17 @@ export default function Releases() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Releases"
+        description="Epicon release history and changelog. Latest beta release with Sequential API, Conv1D, Adam optimizer, and model persistence."
+        canonicalUrl="https://epiconml.github.io/releases"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Epicon Releases",
+          "description": "Release history and changelog for Epicon ML library.",
+        }}
+      />
       <section id="overview" className="mb-16">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
           Release History

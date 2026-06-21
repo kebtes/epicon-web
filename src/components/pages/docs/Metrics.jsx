@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function Metrics() {
   const { setToc } = useDocs()
@@ -16,6 +17,17 @@ export default function Metrics() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Metrics"
+        description="Epicon evaluation metrics: accuracy, precision, recall, F1, confusion matrix for classification; MSE, MAE, R² for regression."
+        canonicalUrl="https://epiconml.github.io/docs/metrics"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Metrics",
+          "description": "Evaluation metrics for classification and regression in Epicon.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-10">Metrics</h1>
 
       <section id="classification" className="mb-12">

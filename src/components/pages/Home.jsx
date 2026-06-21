@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import CodeSnippet from "../CodeSnippet";
 import Features from "../Features";
+import SEO from "../SEO";
 
 const metrics = [
   { value: '< 1MB', label: 'Install Size' },
@@ -29,8 +30,69 @@ function Home() {
     setTimeout(() => setCopied(false), 1500);
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Epicon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Epicon is a lightweight, from-scratch machine learning library built on NumPy. It provides a unified fit/predict API for both neural networks and traditional ML models with minimal dependencies and optional Numba acceleration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install Epicon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install Epicon with pip: pip install epicon. NumPy is the only required dependency. Optionally install Numba for JIT acceleration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Epicon require TensorFlow or PyTorch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Epicon is built from scratch on NumPy and has zero deep learning framework dependencies. No CUDA, no C++, no TensorFlow, no PyTorch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What models does Epicon support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Epicon supports linear models (LinearRegression, Ridge, Lasso, LogisticRegression), tree-based models (DecisionTree, RandomForest), nearest neighbors (KNN), Gaussian Naive Bayes, and neural networks with a Sequential API (Dense, Dropout, Conv1D layers)."
+        }
+      }
+    ]
+  }
+
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Epicon",
+    "description": "Lightweight, from-scratch machine learning library for Python. Unified API for neural networks and traditional ML with minimal dependencies.",
+    "applicationCategory": "Machine Learning",
+    "operatingSystem": "Cross-platform",
+    "programmingLanguage": "Python",
+    "license": "MIT",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+
   return (
     <section className="flex-1 flex flex-col items-center justify-center text-white px-4 pt-20">
+      <SEO
+        title="Epicon"
+        description="Epicon is a lightweight, from-scratch ML library built on NumPy. Unified API for neural networks and traditional ML. Pure Python, MIT license, zero bloat."
+        canonicalUrl="https://epiconml.github.io/"
+        jsonLd={[softwareSchema, faqSchema]}
+      />
       <div className="relative inline-block mb">
         <h1 className="text-6xl md:text-9xl font-bold tracking-tight logo uppercase">
           EPICON

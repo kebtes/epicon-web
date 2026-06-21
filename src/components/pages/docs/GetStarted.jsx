@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
+import SEO from '../../SEO'
 
 const nextSteps = [
   { to: '/docs/traditional-ml', title: 'Traditional ML Models', desc: 'Linear regression, random forests, SVMs, and more — all with a consistent fit/predict API.' },
@@ -35,6 +36,18 @@ export default function GetStarted() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Getting Started"
+        description="Learn how to install Epicon and get started with traditional ML models and neural networks. Minimal dependencies, unified fit/predict API, pure Python."
+        canonicalUrl="https://epiconml.github.io/docs"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Getting Started with Epicon",
+          "description": "Installation guide and quickstart for Epicon ML library.",
+          "proficiencyLevel": "Beginner",
+        }}
+      />
       <section id="overview" className="mb-16">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
           Get Started

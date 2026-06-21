@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function Datasets() {
   const { setToc } = useDocs()
@@ -18,6 +19,17 @@ export default function Datasets() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Datasets"
+        description="Epicon built-in datasets: load_iris, load_mnist, make_classification, make_regression. Quick experimentation and benchmarking tools."
+        canonicalUrl="https://epiconml.github.io/docs/datasets"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Datasets",
+          "description": "Built-in dataset loaders and synthetic data generators in Epicon.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-10">Datasets</h1>
 
       <section id="load-iris" className="mb-12">

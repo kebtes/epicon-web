@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function TraditionalML() {
   const { setToc } = useDocs()
@@ -35,6 +36,17 @@ export default function TraditionalML() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Traditional ML Models"
+        description="Epicon traditional ML models: LinearRegression, Ridge, Lasso, LogisticRegression, DecisionTree, RandomForest, KNN, and GaussianNB — all with a consistent fit/predict API."
+        canonicalUrl="https://epiconml.github.io/docs/traditional-ml"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Traditional ML Models",
+          "description": "Reference for all traditional machine learning models in Epicon.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">Traditional ML</h1>
       <p className="text-white/60 mb-10 max-w-3xl">
         All models follow the same <code className="text-white/80 bg-white/5 px-1 rounded-xs text-sm font-mono">fit(X, y)</code> / <code className="text-white/80 bg-white/5 px-1 rounded-xs text-sm font-mono">predict(X)</code> / <code className="text-white/80 bg-white/5 px-1 rounded-xs text-sm font-mono">score(X, y)</code> pattern.

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function Preprocessing() {
   const { setToc } = useDocs()
@@ -19,6 +20,17 @@ export default function Preprocessing() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Preprocessing"
+        description="Epicon preprocessing utilities: StandardScaler, MinMaxScaler, LabelEncoder, OneHotEncoder, and train_test_split — sklearn-compatible API."
+        canonicalUrl="https://epiconml.github.io/docs/preprocessing"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Preprocessing",
+          "description": "Data preprocessing utilities in Epicon: scalers, encoders, and splitting.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-10">Preprocessing</h1>
 
       <section id="standardscaler" className="mb-12">

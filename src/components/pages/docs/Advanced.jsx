@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDocs } from '../../layout/DocsLayout'
 import CodeSnippet from '../../CodeSnippet'
 import PropsTable from '../../PropsTable'
+import SEO from '../../SEO'
 
 export default function Advanced() {
   const { setToc } = useDocs()
@@ -16,6 +17,17 @@ export default function Advanced() {
 
   return (
     <div className="text-white">
+      <SEO
+        title="Advanced"
+        description="Epicon advanced features: ModelBuilder for config-driven models and Numba JIT acceleration for faster tree splitting, KNN, and distance computations."
+        canonicalUrl="https://epiconml.github.io/docs/advanced"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Epicon Advanced Features",
+          "description": "ModelBuilder, Numba acceleration, and advanced Epicon features.",
+        }}
+      />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-10">Advanced</h1>
 
       <section id="model-builder" className="mb-16">
