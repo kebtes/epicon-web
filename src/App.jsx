@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Routes, Route } from 'react-router-dom'
 import RootLayout from './components/layout/RootLayout'
 import DocsLayout from './components/layout/DocsLayout'
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Analytics />
+      <SpeedInsights />
       <Routes>
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
