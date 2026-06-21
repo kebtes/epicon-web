@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CodeSnippet from "../CodeSnippet";
 import Features from "../Features";
 
@@ -11,6 +11,17 @@ const metrics = [
 
 function Home() {
   const [copied, setCopied] = useState(false);
+  const [version, setVersion] = useState(null);
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/kebtes/epicon/main/epicon/__init__.py')
+      .then(r => r.text())
+      .then(text => {
+        const match = text.match(/__version__\s*=\s*["']([^"']+)["']/);
+        if (match) setVersion(match[1]);
+      })
+      .catch(() => {});
+  }, []);
 
   function handleCopy() {
     navigator.clipboard.writeText('pip install epicon');
@@ -24,9 +35,11 @@ function Home() {
         <h1 className="text-6xl md:text-9xl font-bold tracking-tight logo uppercase">
           EPICON
         </h1>
-        <span className="absolute uppercase -top-1 -right-1 md:-top-2 md:-right-2 text-[10px] md:text-xs font-sans font-semibold tracking-normal text-white bg-green-600 px-1.5 py-0.5 rounded-xs">
-          beta v0.2.0
-        </span>
+        {version && (
+          <span className="absolute uppercase -top-1 -right-1 md:-top-2 md:-right-2 text-[10px] md:text-xs font-sans font-semibold tracking-normal text-white bg-green-600 px-1.5 py-0.5 rounded-xs">
+            {version.startsWith('0.') ? 'beta' : ''} v{version}
+          </span>
+        )}
       </div>
       <p className="text-sm md:text-base text-center font-extralight text-white/70 mb-5 tracking-widest uppercase">
         LIGHTWEIGHT MACHINE LEARNING LIBRARY
@@ -101,7 +114,7 @@ function Home() {
           filename: "main.py",
           description: "Simple text overview of Epicon's capabilities",
           code: `"""
-EPICON v0.2.0
+EPICON v${version || '0.2.0'}
 Lightweight Machine Learning Library
 Pure Python · MIT License
 

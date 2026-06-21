@@ -10,8 +10,8 @@ import Datasets from './components/pages/docs/Datasets'
 import Metrics from './components/pages/docs/Metrics'
 import Advanced from './components/pages/docs/Advanced'
 import ApiReference from './components/pages/docs/ApiReference'
-import VersionsLayout from './components/layout/VersionsLayout'
-import Versions from './components/pages/Versions'
+import ReleasesLayout from './components/layout/ReleasesLayout'
+import Releases from './components/pages/Releases'
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
           <Route path="advanced" element={<Advanced />} />
           <Route path="api" element={<ApiReference />} />
         </Route>
-        <Route path="/versions" element={<VersionsLayout />}>
-          <Route index element={<Versions />} />
+        <Route path="/releases" element={<ReleasesLayout />}>
+          <Route index element={<Releases />} />
         </Route>
       </Route>
     </Routes>

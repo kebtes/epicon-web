@@ -1,16 +1,16 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import VersionsSidebar from './VersionsSidebar'
+import ReleasesSidebar from './ReleasesSidebar'
 
-const VersionsContext = createContext()
+const ReleasesContext = createContext()
 
-export function useVersions() {
-  return useContext(VersionsContext)
+export function useReleases() {
+  return useContext(ReleasesContext)
 }
 
-export default function VersionsLayout() {
-  const [versions, setVersions] = useState([])
-  const [activeVersion, setActiveVersion] = useState('')
+export default function ReleasesLayout() {
+  const [releases, setReleases] = useState([])
+  const [activeRelease, setActiveRelease] = useState('')
   const location = useLocation()
   const contentRef = useRef(null)
   const observerRef = useRef(null)
@@ -30,7 +30,7 @@ export default function VersionsLayout() {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
-          setActiveVersion(entry.target.id)
+          setActiveRelease(entry.target.id)
           break
         }
       }
@@ -41,14 +41,14 @@ export default function VersionsLayout() {
   }, [])
 
   useEffect(() => {
-    setActiveVersion('')
+    setActiveRelease('')
     if (rafRef.current) cancelAnimationFrame(rafRef.current)
     rafRef.current = requestAnimationFrame(setupObserver)
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       if (observerRef.current) observerRef.current.disconnect()
     }
-  }, [location.pathname, versions, setupObserver])
+  }, [location.pathname, releases, setupObserver])
 
   useEffect(() => {
     return () => {
@@ -57,13 +57,13 @@ export default function VersionsLayout() {
   }, [])
 
   return (
-    <VersionsContext.Provider value={{ versions, setVersions, activeVersion }}>
+    <ReleasesContext.Provider value={{ releases, setReleases, activeRelease }}>
       <div className="flex flex-1 flex-row">
-        <VersionsSidebar activeVersion={activeVersion} />
+        <ReleasesSidebar activeRelease={activeRelease} />
         <div ref={contentRef} className="docs-content flex-1 min-w-0 px-8 md:px-12 py-10 max-w-4xl">
           <Outlet />
         </div>
       </div>
-    </VersionsContext.Provider>
+    </ReleasesContext.Provider>
   )
 }
