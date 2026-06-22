@@ -112,7 +112,6 @@ function Home() {
   return (
     <section className="flex-1 flex flex-col items-center justify-center text-white px-4 pt-20">
       <SEO
-        title="Epicon"
         description="Epicon is a lightweight, pure Python machine learning library built from scratch on NumPy with zero dependencies on TensorFlow or PyTorch. Provides a unified fit/predict API for neural networks and traditional ML models. Created by kebtes, MIT license."
         canonicalUrl="https://epiconml.github.io/"
         jsonLd={[softwareSchema, faqSchema]}
@@ -131,12 +130,11 @@ function Home() {
         LIGHTWEIGHT MACHINE LEARNING LIBRARY
       </p>
 
-      <section className="max-w-2xl mx-auto mb-10 text-center px-4">
-        <p className="text-white/80 leading-relaxed text-sm md:text-base">
+      <section className="max-w-2xl mx-auto mb-5 text-center px-4">
+        <p className="hidden md:block text-white/60 leading-relaxed text-sm uppercase font-light text-center">
           Epicon is a lightweight, pure Python machine learning library built from scratch on NumPy.
-          It provides a unified API for both neural networks and traditional ML models — with zero
-          dependencies on TensorFlow, PyTorch, or CUDA. Created by{' '}
-          <a href="https://github.com/kebtes" className="text-white/60 hover:text-white underline underline-offset-2">kebtes</a>.
+          It provides a unified API for both neural networks and traditional ML models.
+          {/* <a href="https://github.com/kebtes" className="text-white/60 hover:text-white underline underline-offset-2">kebtes</a>. */}
         </p>
       </section>
 

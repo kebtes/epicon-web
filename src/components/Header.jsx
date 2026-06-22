@@ -119,7 +119,7 @@ function Header() {
     }, []);
 
     return (
-      <header className="bg-black/30 backdrop-blur-sm text-white text-sm uppercase font-sans flex items-center justify-between border-b border-white/5 relative">
+      <header className="bg-black/30 backdrop-blur-xl text-white text-sm uppercase font-sans flex items-center justify-between border-b border-white/5 relative">
         <Link
           to="/"
           className="font-extralight tracking-widest text-2xl pl-6 logo inline-block cursor-pointer"
